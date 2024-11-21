@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lore_legends_app/screens/form_screen.dart';
 
 import '../components/characterCard.dart';
 
@@ -10,8 +11,6 @@ class initialScreen extends StatefulWidget {
 }
 
 class _initialScreenState extends State<initialScreen> {
-  bool opacity = true;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,29 +24,28 @@ class _initialScreenState extends State<initialScreen> {
       ),
       body: Container(
         color: Color(0xFF1A1A1A),
-        child: AnimatedOpacity(
-          opacity: opacity ? 1 : 0,
-          duration: const Duration(milliseconds: 1000),
-          child: ListView(
-            children: const [
-              characterCard("Ahri", "Vastaya", 2, "Mago", "assets/images/ahri.jpg"),
-              characterCard("Evelyn", "Demônio", 4, "Assasino", "assets/images/evelyn.jpg"),
-              characterCard("Ashe", "Humano", 4, "Atirador", "assets/images/ashe.jpg"),
-              characterCard("Mordekaiser", "Humano", 4, "Necromancer", "assets/images/mordekaiser.jpg")
-            ],
-          ),
+        child: ListView(
+          children: const [
+            characterCard(
+                "Ahri", "Vastaya", 2, "Mago", "assets/images/ahri.jpg"),
+            characterCard(
+                "Evelyn", "Demônio", 4, "Assasino", "assets/images/evelyn.jpg"),
+            characterCard(
+                "Ashe", "Humano", 4, "Atirador", "assets/images/ashe.jpg"),
+            characterCard("Mordekaiser", "Humano", 4, "Necromancer",
+                "assets/images/mordekaiser.jpg")
+          ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: opacity ? Colors.black : Colors.white,
         child: Icon(
-          Icons.remove_red_eye,
-          color: opacity ? Colors.white : Colors.black,
+          Icons.add,
+          color: Colors.black,
         ),
-        onPressed: (){
-          setState(() {
-            opacity = !opacity;
-          });
+        onPressed: () {
+          Navigator.push(
+              context, MaterialPageRoute(
+                  builder: (context) => FormScreen()));
         },
       ),
     );

@@ -203,6 +203,8 @@ class _FormScreenState extends State<FormScreen> {
                             ScaffoldMessenger.of(context).showSnackBar(
                                 const SnackBar(
                                     content: Text("O campeão foi salvo")));
+                            
+                            Navigator.pop(context);
                           }
                         },
                         style: ButtonStyle(

@@ -81,8 +81,9 @@ class _characterCardState extends State<characterCard> {
                                     padding: EdgeInsets.zero,
                                     minimumSize: const Size(30,30),
                                     alignment: Alignment.center,
+                                    backgroundColor: Colors.amber
                                   ),
-                                  child: const Icon(Icons.arrow_drop_up),
+                                  child: const Icon(Icons.arrow_drop_up, color: Colors.white,),
                                 ),
                               ),
                               SizedBox(
@@ -101,8 +102,9 @@ class _characterCardState extends State<characterCard> {
                                     padding: EdgeInsets.zero,
                                     minimumSize: const Size(30,30),
                                     alignment: Alignment.center,
+                                      backgroundColor: Colors.amber
                                   ),
-                                  child: const Icon(Icons.arrow_drop_down),
+                                  child: const Icon(Icons.arrow_drop_down, color: Colors.white,),
                                 ),
                               ),
                             ],
