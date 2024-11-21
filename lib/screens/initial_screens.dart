@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lore_legends_app/data/character_inherited.dart';
 import 'package:lore_legends_app/screens/form_screen.dart';
 
 import '../components/characterCard.dart';
@@ -25,16 +26,7 @@ class _initialScreenState extends State<initialScreen> {
       body: Container(
         color: Color(0xFF1A1A1A),
         child: ListView(
-          children: const [
-            characterCard(
-                "Ahri", "Vastaya", 2, "Mago", "assets/images/ahri.jpg"),
-            characterCard(
-                "Evelyn", "Demônio", 4, "Assasino", "assets/images/evelyn.jpg"),
-            characterCard(
-                "Ashe", "Humano", 4, "Atirador", "assets/images/ashe.jpg"),
-            characterCard("Mordekaiser", "Humano", 4, "Necromancer",
-                "assets/images/mordekaiser.jpg")
-          ],
+          children: CharacterInherited.of(context).character,
         ),
       ),
       floatingActionButton: FloatingActionButton(
